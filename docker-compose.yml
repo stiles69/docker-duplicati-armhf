@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  duplicati:
+    image: lsioarmhf/duplicati
+    container_name: duplicati_container_compose
+    restart: always
+    ports:
+      - '8200:8200'
+    volumes:
+      - "./config:/config"
+      - "/backups:/backups"
+      - "../docker-mediacenter-armhf/sabnzbd/config:/source-sabnzbd-config"
+      - "../docker-mediacenter-armhf/couchpotato/config:/source-couchpotato-config"
+      - "../docker-mediacenter-armhf/sonarr/config:/source-sonarr-config"
+      - "../docker-mediacenter-armhf/htpcmanager/config:/source-htpcmanager-config"
+      - "../docker-mediacenter-armhf/headphones/config:/source-headphones-config"
+    env_file: 
+      - ./common.env
+    network_mode: "host"
