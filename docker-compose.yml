@@ -15,6 +15,7 @@ services:
       - "../docker-mediacenter-armhf/sonarr/config:/source-sonarr-config"
       - "../docker-mediacenter-armhf/htpcmanager/config:/source-htpcmanager-config"
       - "../docker-mediacenter-armhf/headphones/config:/source-headphones-config"
+      - "/home/brettsalemink/Docker/docker-duplicati-armhf:/docker-duplicati-armhf"
     env_file: 
       - ./common.env
     network_mode: "host"
