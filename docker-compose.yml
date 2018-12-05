@@ -10,12 +10,7 @@ services:
     volumes:
       - "./config:/config"
       - "/backups:/backups"
-      - "../docker-mediacenter-armhf/sabnzbd/config:/source-sabnzbd-config"
-      - "../docker-mediacenter-armhf/couchpotato/config:/source-couchpotato-config"
-      - "../docker-mediacenter-armhf/sonarr/config:/source-sonarr-config"
-      - "../docker-mediacenter-armhf/htpcmanager/config:/source-htpcmanager-config"
-      - "../docker-mediacenter-armhf/headphones/config:/source-headphones-config"
-      - "/home/brettsalemink/Docker/docker-duplicati-armhf:/docker-duplicati-armhf"
+      - "/home/brettsalemink/development/Docker:/source-slave3-docker"
     env_file: 
       - ./common.env
     network_mode: "host"
