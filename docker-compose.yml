@@ -10,7 +10,8 @@ services:
     volumes:
       - "./config:/config"
       - "/backups:/backups"
-      - "/home/brettsalemink/development/Docker:/source-slave3-docker"
+      - "/home/brettsalemink/development/Docker/rpi-docker-transmission-open-vpn:/source-rpi-docker-transmission-open-vpn"
+      - "/home/brettsalemink/development/Docker/docker-jackett-armhf:/source-docker-jackett-armhf"
     env_file: 
       - ./common.env
     network_mode: "host"
